@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[margin=1.0in]{geometry}
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\title{SWOT Analysis of SSRI Data, Programming \& Statistics}
+\maketitle
+\section*{Strengths}
+\begin{itemize}
+  \item Familiarity with Social Science research methods and data
+  \item Wide range of skills within group
+  \item Skills sets overlap providing a certain amount of backup 
+  \item Easy to access/hire support, especially for short-term work 
+  \item Being embedded in the administrative\slash research teams builds strong working relationships with faculty, staff, students
+  \item Knowledge of issues related to use and management of restricted data
+\end{itemize}  
+\section*{Weaknesses}
+\begin{itemize}
+  \item Wider range of skills in a wider range of disciplines are required to tackle Social Science research questions
+  \item No clear boundaries or focus on services that should be offered 
+  \item Will need more 21st century data science expertise to meet needs
+  \item ``Gaps'' in funding are a burden on the Institute 
+\end{itemize}
+\section*{Challenges}
+\begin{itemize}
+  \item Protective (suppressive?) attitude toward programming services inhibits adequate marketing efforts
+  \item Impact of outsourcing services is not well understood
+  \item Colleges and units at PSU have fragmented and uneven access to statistical and programming (both research and administrative) services 
+  \item Administrative programming needs continue to grow 
+  \item Difficult to collaborate with other units inside and outside SSRI
+  \item Current consultation services underused; conversely there is growing demand for statistical \emph{practioners}
+\end{itemize}
+
+\section*{Opportunities}
+\begin{itemize}
+  \item Staff turnover due to retirements over next few years
+  \item Research Data Center 
+  \item Building relationships with other units like UL, HMC, OVPR, etc allows us to help mold their services to fit our researchers needs and provide a wider array of services efficently  
+  \item Growing recognition of the field of ``Data Science'' 
+\end{itemize}
+
+<<echo=FALSE, results=hide>>=
+library(VennDiagram)
+plot.new()
+@
+
+\begin{figure}[h]
+\begin{center}
+<<fig=TRUE, png=TRUE, echo=FALSE, height=4, width=4, eps=FALSE>>=
+# Reference five-set diagram
+venn.plot <- 
+  draw.quintuple.venn(
+  area1 = 301, 
+  area2 = 321, 
+  area3 = 311, 
+  area4 = 321, 
+  area5 = 301, 
+  n12 = 188, 
+  n13 = 191, 
+  n14 = 184, 
+  n15 = 177, 
+  n23 = 194, 
+  n24 = 197, 
+  n25 = 190, 
+  n34 = 190, 
+  n35 = 173, 
+  n45 = 186, 
+  n123 = 112, 
+  n124 = 108, 
+  n125 = 108, 
+  n134 = 111, 
+  n135 = 104, 
+  n145 = 104, 
+  n234 = 111, 
+  n235 = 107, 
+  n245 = 110, 
+  n345 = 100, 
+  n1234 = 61, 
+  n1235 = 60, 
+  n1245 = 59, 
+  n1345 = 58, 
+  n2345 = 57, 
+  n12345 = 31, 
+  category = c("Substantive", "Programming", "Data", "Statistics", "Communication"), 
+  fill = c("dodgerblue", "goldenrod", "darkorange", "seagreen", "orchid3"), 
+  cat.col = c("navy", "brown", "darkorange3", "forestgreen", "maroon"),
+  cat.cex = .9,
+  margin = 0.5,
+  cex = 0,
+  ind = TRUE
+);
+
+#includegraphics[width=5in]{vennDiagram-002.pdf}
+
+@
+
+\caption{SSRI Research Support incorporating a ``Data Science'' approach}
+\end{center}
+\end{figure}
+
+\end{document}
